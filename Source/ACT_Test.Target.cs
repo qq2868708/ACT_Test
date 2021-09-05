@@ -10,6 +10,5 @@ public class ACT_TestTarget : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.Add("ACT_Test");
-		ExtraModuleNames.Add("ActPlugin");
 	}
 }
