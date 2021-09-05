@@ -1,0 +1,17 @@
+#Unreal Engine Generated Files #
+Binaries/
+Intermediate/
+Build/
+DerivedDataCache/
+Saved/
+_BuiltData.uasset/
+
+#VS Generated Files #
+*.VC.db
+.vs
+*.sln
+
+#Xcode Generated Files #
+**/xcuserdata
+*.xcworkspace
+*.xcodeproj
