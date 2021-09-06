@@ -31,16 +31,9 @@ public:
 	TArray<USkillComponent*> skillArray;
 	UFUNCTION(BlueprintCallable)
 	virtual USkillComponent* AddSkill(TSubclassOf<USkillComponent> skillClass);
-	UFUNCTION(BlueprintCallable)
-	virtual void BindSkill(USkillComponent* bindSkill,USkillComponent*& targetSkill);
-	UFUNCTION(BlueprintCallable)
-	virtual void CastSkill(USkillComponent* skill);
 
-	USkillComponent * skill1;
 	UFUNCTION(BlueprintCallable)
-	virtual void BindSkill1(USkillComponent* skill);
-	UFUNCTION(BlueprintCallable)
-	virtual void CastSKill1();
+	void SetCurrentSkillComponent(int index);
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
 	USkillComponent* currentSkillComponent;

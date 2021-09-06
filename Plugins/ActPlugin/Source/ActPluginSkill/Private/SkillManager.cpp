@@ -19,11 +19,6 @@ USkillManager::USkillManager()
 void USkillManager::BeginPlay()
 {
 	Super::BeginPlay();
-
-	if(GetOwner()&&GetOwner()->InputComponent)
-	{
-		GetOwner()->InputComponent->BindAction("Q",EInputEvent::IE_Pressed,this,&USkillManager::CastSKill1);
-	}
 	
 }
 
@@ -38,7 +33,6 @@ void USkillManager::TickComponent(float DeltaTime, ELevelTick TickType, FActorCo
 
 USkillComponent* USkillManager::AddSkill(TSubclassOf<USkillComponent> skillClass)
 {
-	UE_LOG(LogTemp,Warning,TEXT("1234"));
 	USkillComponent* newSkill=NewObject<USkillComponent>(GetOwner(),skillClass);
 	newSkill->RegisterComponent();
 	skillArray.Add(newSkill);
@@ -46,30 +40,8 @@ USkillComponent* USkillManager::AddSkill(TSubclassOf<USkillComponent> skillClass
 	return newSkill;
 }
 
-void USkillManager::BindSkill(USkillComponent* inBindSkill, USkillComponent*& targetSkill)
-{
-	if(!inBindSkill)
-	{
-		return;
-	}
-	targetSkill=inBindSkill;
-}
 
-void USkillManager::CastSkill(USkillComponent* skill)
+void USkillManager::SetCurrentSkillComponent(int index)
 {
-	if(skill)
-	{
-		skill->OnCast();
-	}
+	currentSkillComponent=skillArray[index];
 }
-
-void USkillManager::BindSkill1(USkillComponent* skill)
-{
-	BindSkill(skill,skill1);
-}
-
-void USkillManager::CastSKill1()
-{
-	CastSkill(skill1);
-}
-
