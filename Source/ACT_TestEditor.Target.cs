@@ -10,5 +10,6 @@ public class ACT_TestEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.Add("ACT_Test");
+		ExtraModuleNames.Add("ActPlugin");
 	}
 }
