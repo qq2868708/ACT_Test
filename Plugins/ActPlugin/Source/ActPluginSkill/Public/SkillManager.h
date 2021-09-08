@@ -37,4 +37,8 @@ public:
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
 	USkillComponent* currentSkillComponent;
+
+
+	UFUNCTION(BlueprintCallable)
+	float GetCurrentSkillRange();
 };

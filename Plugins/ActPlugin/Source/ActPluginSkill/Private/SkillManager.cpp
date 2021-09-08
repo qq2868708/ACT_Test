@@ -45,3 +45,12 @@ void USkillManager::SetCurrentSkillComponent(int index)
 {
 	currentSkillComponent=skillArray[index];
 }
+
+float USkillManager::GetCurrentSkillRange()
+{
+	if(currentSkillComponent)
+	{
+		return currentSkillComponent->Range;
+	}
+	return 0.f;
+}

@@ -39,4 +39,7 @@ public:
 	USkillManager * manager;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	UAnimMontage* skillMontage;
+
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
+	float Range;
 };
